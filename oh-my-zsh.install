@@ -33,7 +33,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 # 先下载模板文件
-curl -o zshrc.zsh-template "https://raw.githubusercontent.com/Hyosung/zsh/refs/heads/master/zshrc.zsh-template"
+curl -o zshrc.zsh-template "https://raw.githubusercontent.com/Hyosung/zsh/refs/heads/main/zshrc.zsh-template"
 if [ -f ~/.zshrc ]; then
 	cp ~/.zshrc ~/.zshrc.orig
 fi
