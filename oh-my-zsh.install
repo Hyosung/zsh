@@ -46,13 +46,6 @@ install_plugin autojump https://github.com/wting/autojump
 # 	copypath: 无参数，直接拷贝当前路径；
 # 	copypath <文件或目录>：拷贝指定文件或目录的绝对路径；
 # sudo 的主要作用是，当我们输入某个命令，如 vim /etc/zshrc，发现没有系统权限，利用 sudo 插件，可快速将 sudo 作为前缀添加到命令最前面。
-
-# 配置zsh-history-substring-search的键盘事件
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-echo "Zsh插件：zsh-history-substring-search的↑↓键盘事件配置成功！"
 # 先下载模板文件
 curl -o zshrc.zsh-template "https://raw.githubusercontent.com/Hyosung/zsh/refs/heads/main/zshrc.zsh-template"
 if [ -f ~/.zshrc ]; then

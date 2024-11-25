@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-source $HOME/.bash_profile
+if [ -f $HOME/.base_profile ]; then
+	source $HOME/.bash_profile
+fi
 
 # ------------------ HomeBrew配置 BEGIN ------------------
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
@@ -163,3 +165,9 @@ source $ZSH/oh-my-zsh.sh
 # alias gitproxyunset="git config --global --unset http.proxy; echo 'Unset git proxy successfully'"
 # alias gitproxyget="git config --global --unset http.proxy"
 # alias python=python3
+
+# 配置zsh-history-substring-search的键盘事件
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
