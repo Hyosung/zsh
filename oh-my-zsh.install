@@ -17,6 +17,8 @@ install_plugin() {
 	local url=$2
 	if [ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$name ]; then
 		echo "Zsh插件：${name}已安装！"
+		echo "正在准备为您更新$name..."
+		git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$name pull
 	else
 		git clone "$url" ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$name
 		if [ $? -eq 0 ]; then
@@ -24,7 +26,6 @@ install_plugin() {
 		fi
 	fi
 }
-
 # 安装 zsh-autosuggestions 命令行自动建议提示插件
 install_plugin zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions
 # 安装 zsh-syntax-highlighting 命令行语法高亮插件
