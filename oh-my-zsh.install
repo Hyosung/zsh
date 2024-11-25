@@ -58,5 +58,5 @@ curl -o zshrc.zsh-template "https://raw.githubusercontent.com/Hyosung/zsh/refs/h
 if [ -f ~/.zshrc ]; then
 	cp ~/.zshrc ~/.zshrc.orig
 fi
-mv -f /zshrc.zsh-template ~/.zshrc
+mv -f zshrc.zsh-template ~/.zshrc
 echo "Oh-My-Zsh配置完成!!!"
