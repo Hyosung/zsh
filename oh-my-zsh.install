@@ -7,17 +7,32 @@ if [ $? -ne 0 ]; then
 fi
 # 安装 zsh-autosuggestions 命令行自动建议提示插件
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+if [ $? -eq 0 ]; then
+	echo "Zsh插件：zsh-autosuggestions安装成功！"
+fi
 # 安装 zsh-syntax-highlighting 命令行语法高亮插件
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+if [ $? -eq 0 ]; then
+	echo "Zsh插件：zsh-syntax-highlighting安装成功！"
+fi
 # 安装 you-should-use 用途是，如果执行的命令存在别名，会自动提示推荐使用的别名；
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+if [ $? -eq 0 ]; then
+	echo "Zsh插件：you-should-use安装成功！"
+fi
 # 安装 zsh-history-substring-search
 # 一般情况下，在使用 zsh 时，通过 ↑ 或 ↓ 方向键，能实现类似按前缀匹配补齐的效果。
 # 而如果输入的是中间的字符串，则没法自动补齐。这个插件真是为这个目的而生的。
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+if [ $? -eq 0 ]; then
+	echo "Zsh插件：zsh-history-substring-search安装成功！"
+fi
 # 安装 autojump
 # 比如我现在在根目录，我想进入temp目录，通常的做法是一层一层的cd，然后有了autojump后，我们可以直接输入j temp，即可跳转到temp目录
 git clone https://github.com/wting/autojump ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autojump
+if [ $? -eq 0 ]; then
+	echo "Zsh插件：autojump安装成功！"
+fi
 
 # 内置插件
 # copyfile，用于拷贝文件内容，命令格式 copyfile <文件路径>。
@@ -32,6 +47,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+echo "Zsh插件：zsh-history-substring-search的↑↓键盘事件配置成功！"
 # 先下载模板文件
 curl -o zshrc.zsh-template "https://raw.githubusercontent.com/Hyosung/zsh/refs/heads/main/zshrc.zsh-template"
 if [ -f ~/.zshrc ]; then
